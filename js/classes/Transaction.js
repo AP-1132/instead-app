@@ -5,7 +5,6 @@ export class Transaction {
     this.amount = parseFloat(amount);
     this.category = category;
     this.type = type; // to categorize transaction as income or expense
-    this.date = new Date().toLocaleDateString();
   }
 
   getFormattedAmount() {
