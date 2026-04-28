@@ -67,12 +67,20 @@ export const Animations = {
     });
   },
 
-  animateAITyping: () => {
+  animateAILoading: () => {
     return gsap.to("#ai-text", {
-      text: "Analyzing your spending patterns...",
-      duration: 2,
+      text: "Analyzing your spending habits...",
+      duration: 1.5,
       repeat: -1,
       yoyo: true,
+      ease: "power1.inOut",
+    });
+  },
+
+  animateAIResult: (content) => {
+    gsap.to("#ai-text", {
+      text: content,
+      duration: 3,
       ease: "none",
     });
   },

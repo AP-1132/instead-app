@@ -5,7 +5,7 @@ export const GeminiService = {
     const GEMINI_KEY = Config.GEMINI_KEY;
     const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_KEY}`;
 
-    if (transactions.length === 0) return "Add some transactions first!";
+    if (transactions.length === 0) return "Please add some transactions first.";
 
     const historySummary = transactions
       .map((t) => `${t.type}: ${t.name} ($${t.amount})`)
@@ -39,7 +39,7 @@ export const GeminiService = {
 
       return data.candidates[0].content.parts[0].text;
     } catch (error) {
-      console.error("Gemini Service Error:", error);
+      console.error("Gemini Error:", error);
       return "The Financial Fortune is currently unavailable. Please try again later.";
     }
   },

@@ -59,12 +59,26 @@ list.addEventListener("click", async (e) => {
 });
 
 aiBtn.addEventListener("click", async () => {
-  const typingAnim = Animations.animateAITyping();
+  if (aiBtn.disabled) return;
+  if (app.transactions.length === 0) {
+    document.getElementById("ai-text").innerText = "Add some data first!";
+    return;
+  }
+
+  aiBtn.disabled = true;
+  aiBtn.innerText = "Processing...";
+
+  const loadingAnim = Animations.animateAILoading();
 
   const insight = await GeminiService.generateInsight(app.transactions);
 
-  typingAnim.pause();
-  document.getElementById("ai-text").innerText = insight;
+  loadingAnim.kill();
+  document.getElementById("ai-text").innerText = "";
+
+  Animations.animateAIResult(insight);
+
+  aiBtn.disabled = false;
+  aiBtn.innerText = "Analyze My Habits";
 });
 
 function renderList() {
