@@ -4,7 +4,7 @@ import { AlphaVantageService } from "../services/alpha-vantage.js";
 export class BudgetManager {
   constructor() {
     this.transactions = [];
-    this.totalBalance = 0;
+    this.totalBalance = 0; // value prior to any transactions
     this.currentAssetPrice = 0; // default value prior to API fetch
     this.selectedSymbol = "AAPL";
   }
