@@ -23,7 +23,7 @@ The application uses composition. The BudgetManager acts as a parent container t
 
 ### Class Diagram
 
-![Class Diagram](../instead-app/assets/images/diagtam.png)
+![Class Diagram](/assets/images/diagram.png)
 
 ## Feature Walkthrough
 
