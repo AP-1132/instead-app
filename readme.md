@@ -2,6 +2,16 @@
 
 A simple to use budget tracking application with a fun twist comparing transactions to potential stock investments.
 
+## How to Run Application
+
+1. Download the project folder and ensure all files are present
+2. API Configuration
+   - Navigate to `js/config.example.js`. This is an example `config.js` file. You must insert your Alpha Vantage and Google Gemini API keys into their respective strings. Then, rename `config.example.js` to `config.js`
+
+3. Ensure the background video is located at `assets/video/background.mp4` and the audio files are in `assets/audio`.
+4. Open `index.html` using a local development server.
+5. Input a few expenses in the form, then click the reality toggle to see the transformation. Then click the "Analyze My Spending Habits" button to generate a personalized financial insight.
+
 ## Project Overview
 
 Instead is an interactive financial dashboard designed for spenders who want to transform boring budget tracking into a visual narrative. Traditional financial apps act as passive ledgers, showing users where their money went, but fail to provide the psychological motivation needed to stop impulsive spending.
@@ -75,13 +85,3 @@ To address this issue, I implemented a fallback incase the API limit was reached
 If I had more time, I would implement perssistent data storage. Currently, the application loses all the data upon refresh. This could be achieved using Firebase. Using Firebase would also allow the implementation of user login and authentication.
 
 Another implementation would be to include other stock options to compare. Currently, the application only compares purchases to Apple stock (AAPL). I would like to include different stock options to compare, such as NVIDIA (NVDA). I would also like to implement other investment options like cryptocurrency, although that would likely require another API to implement.
-
-## How to Run Application
-
-1. Download the project folder and ensure all files are present
-2. API Configuration
-   - Navigate to `js/config.example.js`. This is an example `config.js` file. You must insert your Alpha Vantage and Google Gemini API keys into their respective strings. Then, rename `config.example.js` to `config.js`
-
-3. Ensure the background video is located at `assets/video/background.mp4` and the audio files are in `assets/audio`.
-4. Open `index.html` using a local development server.
-5. Input a few expenses in the form, then click the reality toggle to see the transformation. Then click the "Analyze My Spending Habits" button to generate a personalized financial insight.
